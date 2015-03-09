@@ -1,0 +1,22 @@
+{
+    "name": "simple_php_adapters/simple_php_adapters",
+    "type": "library",
+    "description": "Adapters for pcntl, cURL etc.",
+    "keywords": ["pcntl","curl"],
+    "homepage": "https://github.com/andreyserdjuk/simple_php_adapters",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrey Serdjuk",
+            "email": "ase6120@gmail.com",
+            "homepage": "https://www.facebook.com/andreyserdjuk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "psr-4": {"SimplePHPAdapters\\": "src/SimplePHPAdapters"}
+    }
+}
