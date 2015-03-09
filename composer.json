@@ -1,9 +1,9 @@
 {
-    "name": "simple_php_adapters/simple_php_adapters",
+    "name": "pcntl_job/pcntl_job",
     "type": "library",
     "description": "Adapters for pcntl, cURL etc.",
-    "keywords": ["pcntl","curl"],
-    "homepage": "https://github.com/andreyserdjuk/simple_php_adapters",
+    "keywords": ["pcntl"],
+    "homepage": "https://github.com/andreyserdjuk/pcntl_job.git",
     "license": "MIT",
     "authors": [
         {
@@ -17,6 +17,6 @@
         "php": ">=5.6"
     },
     "autoload": {
-        "psr-4": {"SimplePHPAdapters\\": "src/SimplePHPAdapters"}
+        "psr-4": {"PcntlJob\\": "src/PcntlJob"}
     }
 }
