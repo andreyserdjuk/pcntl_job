@@ -13,7 +13,7 @@ namespace PcntlJob;
  */
 class PcntlJob
 {
-    protected $childProcesses = [];
+    protected $childProcesses = array();
 
     protected $countChildProcesses;
 
@@ -22,13 +22,13 @@ class PcntlJob
     	$this->countChildProcesses = $countChildProcesses;
     }
 
-    public function create($closure, $args = [])
+    public function create($closure, $args = array())
     {
         $closureKey = md5(json_encode($closure));
         $created = FALSE;
 
         if (!isset($this->childProcesses[$closureKey])) {
-            $this->childProcesses[$closureKey] = [];
+            $this->childProcesses[$closureKey] = array();
         }
 
         while (!$created) {
@@ -37,7 +37,7 @@ class PcntlJob
             while ($signaled_pid = pcntl_waitpid(-1, $status, WNOHANG)) {
                 if ($signaled_pid == -1) {
                     // there are no child processes
-                    $this->childProcesses[$closureKey] = [];
+                    $this->childProcesses[$closureKey] = array();
                     break;
                 } else {
                     unset($this->childProcesses[$closureKey][$signaled_pid]);
