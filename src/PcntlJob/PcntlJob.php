@@ -18,7 +18,8 @@ class PcntlJob
     protected $countChildProcesses;
 
 
-    public function __construct($countChildProcesses = 20) {
+    public function __construct($countChildProcesses = 20)
+    {
     	$this->countChildProcesses = $countChildProcesses;
     }
 
