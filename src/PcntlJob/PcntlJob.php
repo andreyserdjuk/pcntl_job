@@ -7,7 +7,7 @@ namespace PcntlJob;
  * pcntl adapter for process creating
  *
  * example of usage:
- *      $job = new Job;
+ *      $job = new PcntlJob(10);
  *      $job->create(array($this, 'parseRSS'), array($href));
  *      function parseRSS($ref) { ... }
  */
@@ -45,7 +45,7 @@ class PcntlJob
                 }
             }
 
-            if (count($this->childProcesses[$closureKey]) < 30) {
+            if (count($this->childProcesses[$closureKey]) < $this->countChildProcesses) {
                 $pid = pcntl_fork();
 
                 if ($pid == -1) {
